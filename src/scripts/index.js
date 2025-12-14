@@ -22,7 +22,7 @@ const popupAvatar = document.querySelector('.popup_type_avatar');
 
 const profileTitle = document.querySelector('.profile__title');
 const profileDescription = document.querySelector('.profile__description');
-const profileImage = document.querySelector('.profile__image'); // Container for avatar click
+const profileImage = document.querySelector('.profile__image');
 const buttonEditProfile = document.querySelector('.profile__edit-button');
 const buttonAddCard = document.querySelector('.profile__add-button');
 
@@ -35,6 +35,7 @@ const cardNameInput = formNewCard.elements['place-name'];
 const cardLinkInput = formNewCard.elements.link;
 
 const formAvatar = document.forms['edit-avatar'];
+const avatarInput = formAvatar.elements.avatar;
 
 const popupImageImg = popupImage.querySelector('.popup__image');
 const popupImageCaption = popupImage.querySelector('.popup__caption');
@@ -80,6 +81,8 @@ function handleCardFormSubmit(evt) {
 
 function handleAvatarFormSubmit(evt) {
   evt.preventDefault();
+  const avatarLink = avatarInput.value;
+  profileImage.style.backgroundImage = `url('${avatarLink}')`;
   closeModal(popupAvatar);
   formAvatar.reset();
 }
@@ -106,7 +109,8 @@ formEditProfile.addEventListener('submit', handleProfileFormSubmit);
 formNewCard.addEventListener('submit', handleCardFormSubmit);
 formAvatar.addEventListener('submit', handleAvatarFormSubmit);
 
-document.querySelectorAll('.popup').forEach((popup) => {
+const popups = document.querySelectorAll('.popup');
+popups.forEach((popup) => {
   popup.addEventListener('mousedown', (evt) => {
     if (evt.target.classList.contains('popup_is-opened')) {
       closeModal(popup);
