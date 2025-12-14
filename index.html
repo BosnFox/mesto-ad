@@ -1,17 +1,17 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"/>
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Mesto</title>
-    <link rel="stylesheet" href="./src/pages/index.css">
+    <link rel="stylesheet" href="./src/pages/index.css"/>
 </head>
 <body class="page">
 <div class="page__content">
     <header class="header page__section">
-        <img src="./src/images/logo.svg" alt="Логотип проекта масто" class="header__logo">
+        <img src="./src/images/logo.svg" alt="Логотип проекта масто" class="header__logo"/>
     </header>
     <main class="content">
         <section class="profile page__section">
@@ -50,9 +50,8 @@
                         maxlength="40"
                         pattern="^[a-zA-Zа-яА-ЯёЁ\s\-]+$"
                         data-error-message="Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы"
-                >
+                />
                 <span class="popup__error" id="user-name-error"></span>
-
                 <input
                         type="text"
                         name="description"
@@ -62,9 +61,8 @@
                         required
                         minlength="2"
                         maxlength="200"
-                >
+                />
                 <span class="popup__error" id="user-description-error"></span>
-
                 <button type="submit" class="button popup__button">Сохранить</button>
             </form>
         </div>
@@ -86,9 +84,8 @@
                         maxlength="30"
                         pattern="^[a-zA-Zа-яА-ЯёЁ\s\-]+$"
                         data-error-message="Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы"
-                >
+                />
                 <span class="popup__error" id="place-name-error"></span>
-
                 <input
                         type="url"
                         name="link"
@@ -96,9 +93,8 @@
                         class="popup__input popup__input_type_url"
                         placeholder="Ссылка на картинку"
                         required
-                >
+                />
                 <span class="popup__error" id="place-link-error"></span>
-
                 <button type="submit" class="button popup__button">Создать</button>
             </form>
         </div>
@@ -107,7 +103,7 @@
     <div class="popup popup_type_image">
         <div class="popup__content popup__content_content_image">
             <button type="button" class="popup__close"></button>
-            <img src="" alt="" class="popup__image">
+            <img src="" alt="" class="popup__image"/>
             <p class="popup__caption"></p>
         </div>
     </div>
@@ -124,9 +120,8 @@
                         class="popup__input popup__input_type_url"
                         placeholder="Ссылка на картинку"
                         required
-                >
+                />
                 <span class="popup__error" id="user-avatar-error"></span>
-
                 <button type="submit" class="button popup__button">Сохранить</button>
             </form>
         </div>
