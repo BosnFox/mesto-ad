@@ -1,7 +1,8 @@
 const config = {
-  baseUrl: 'https://mesto.nomoreparties.co/v1/YOUR_COHORT_ID',
+  // ВНИМАНИЕ: Замените 'wff-cohort-XX' на идентификатор вашей группы!
+  baseUrl: 'https://mesto.nomoreparties.co/v1/apf-cohort-202',
   headers: {
-    authorization: 'YOUR_TOKEN',
+    authorization: 'e6b34a5b-5832-4a05-a9ce-98e07534d957',
     'Content-Type': 'application/json'
   }
 };
