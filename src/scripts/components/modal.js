@@ -16,3 +16,12 @@ function handleEscUp(evt) {
     }
   }
 }
+
+export function setModalListeners(popup) {
+  popup.addEventListener('mousedown', (evt) => {
+    // Закрываем, если клик по оверлею (фон) или по крестику
+    if (evt.target.classList.contains('popup_is-opened') || evt.target.classList.contains('popup__close')) {
+      closeModal(popup);
+    }
+  });
+}

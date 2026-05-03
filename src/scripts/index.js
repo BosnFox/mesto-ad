@@ -2,7 +2,7 @@ import { getUserInfo, getCardList, deleteCard, changeLikeCardStatus, updateAvata
 from './components/api.js';
 import '../pages/index.css';
 import { createCard, removeCardElement, updateLikeUI } from './components/card.js';
-import { openModal, closeModal } from './components/modal.js';
+import { openModal, closeModal, setModalListeners } from './components/modal.js';
 import { enableValidation, clearValidation } from './components/validation.js';
 
 const validationConfig = {
@@ -295,11 +295,7 @@ formAvatar.addEventListener('submit', handleAvatarFormSubmit);
 
 const popups = document.querySelectorAll('.popup');
 popups.forEach((popup) => {
-  popup.addEventListener('mousedown', (evt) => {
-    if (evt.target.classList.contains('popup_is-opened') || evt.target.classList.contains('popup__close')) {
-      closeModal(popup);
-    }
-  });
+  setModalListeners(popup);
 });
 
 enableValidation(validationConfig);
