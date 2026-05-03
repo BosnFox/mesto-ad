@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: './',
+  base: '/mesto-ad/',
   server: {
     open: true,
     port: 3000
