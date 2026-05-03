@@ -60,3 +60,12 @@ export function createCard(cardData, currentUserId, deleteCallback, likeCallback
 
   return cardElement;
 }
+
+export function removeCardElement(cardElement) {
+  cardElement.remove();
+}
+
+export function updateLikeUI(likeButton, likeCountElement, likesCount) {
+  likeButton.classList.toggle('card__like-button_is-active');
+  likeCountElement.textContent = likesCount;
+}

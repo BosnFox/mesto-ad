@@ -1,7 +1,7 @@
 import { getUserInfo, getCardList, deleteCard, changeLikeCardStatus, updateAvatar, addCard, setUserInfo }
 from './components/api.js';
 import '../pages/index.css';
-import { createCard } from './components/card.js';
+import { createCard, removeCardElement, updateLikeUI } from './components/card.js';
 import { openModal, closeModal } from './components/modal.js';
 import { enableValidation, clearValidation } from './components/validation.js';
 
@@ -189,7 +189,7 @@ function handleImageClick(cardData) {
 function handleDeleteCard(cardId, cardElement) {
   deleteCard(cardId)
     .then(() => {
-      cardElement.remove();
+      removeCardElement(cardElement);
     })
     .catch((err) => console.log(err));
 }
@@ -198,8 +198,7 @@ function handleLikeCard(cardId, likeButton, likeCountElement) {
   const isLiked = likeButton.classList.contains('card__like-button_is-active');
   changeLikeCardStatus(cardId, isLiked)
     .then((updatedCardData) => {
-      likeButton.classList.toggle('card__like-button_is-active');
-      likeCountElement.textContent = updatedCardData.likes.length;
+      updateLikeUI(likeButton, likeCountElement, updatedCardData.likes.length);
     })
     .catch((err) => console.log(err));
 }
